@@ -10,6 +10,7 @@ to remember how to save changes in docker container
 #docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 ```
 CONTAINER = docker ps
+
 REPOSITORY[:TAG] = docker images
 
 example:
