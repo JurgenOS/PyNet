@@ -27,7 +27,9 @@ or if you do it second and more time, just type:
 # sudo apt-get install git
 # git config --global user.name "Your Name"
 # git config --global user.email "youremail@domain.com"
-# git remote origin https://github.com/JurgenOS/PyNet.git
+# git remote origin https://github.com/JurgenOS/PyNet.git   (for first time)
+# git fetch
+# git pull
 ```
 to see the list of remote git repos:
 ```
