@@ -22,6 +22,19 @@ or if you do it second and more time, just type:
 # sudo python3.6 /root/Download/get-pip.py
 ```
 
+### Git Inatallatoin
+```
+# sudo apt-get install git
+# git config --global user.name "Your Name"
+# git config --global user.email "youremail@domain.com"
+# git remote origin https://github.com/JurgenOS/PyNet.git
+```
+to see the list of remote git repos:
+```
+# git remote -v
+```
+### Docker
+
 to remember how to save changes in docker container
 ```
 #docker ps
