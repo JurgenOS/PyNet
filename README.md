@@ -17,7 +17,10 @@ to install pip:
 # wget https://bootstrap.pypa.io/get-pip.py
 # sudo python3.6 get-pip.py
 ```
-
+or if you do it second and more time, just type:
+```
+# sudo python3.6 /root/Download/get-pip.py
+```
 
 to remember how to save changes in docker container
 ```
