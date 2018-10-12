@@ -4,7 +4,7 @@ The repo to keep code from course "Python for network engineers" by David Bonama
 before start coding type this to get recent environment
 ```
 # apt update && apt upgrate
-# apt-get update && apt-get upgrate
+# apt-get update && apt-get upgrade
 # sudo apt-get install -y software-properties-common
 # add-apt-repository ppa:jonathonf/python-3.6
 # apt install sudo
