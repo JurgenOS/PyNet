@@ -3,7 +3,7 @@ The repo to keep code from course "Python for network engineers" by David Bonama
 
 before start coding type this to get recent environment
 ```
- apt update && apt upgrate
+ apt update && apt upgrade
  apt-get update && apt-get upgrade
  apt install sudo
  sudo apt-get install -y software-properties-common
