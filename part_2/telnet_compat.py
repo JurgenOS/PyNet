@@ -10,7 +10,8 @@ def send_command_telnet(hosts, command, user, password):
     for node in hosts:
         tn = telnetlib.Telnet(node)
     
-        tn.read_until(b"Username: ")
+        #tn.read_until(b"Username: ")
+        tn.expect([b"Username: ", b"login: "])
         tn.write(user.encode("utf-8") + b"\n")
         if password:
             tn.read_until(b"Password: ")
