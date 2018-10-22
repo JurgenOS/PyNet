@@ -27,8 +27,8 @@ def send_command_telnet(hosts, command, user, password):
 
 
 if __name__ == "__main__":
-    user = "jos"
-    password = "Boroda_11"
+    user = "user"
+    password = "cisco"
     hosts = ["192.168.73.200"]
     command = [" show version", " exit"]
     
