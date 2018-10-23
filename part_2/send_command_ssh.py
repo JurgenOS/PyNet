@@ -4,8 +4,9 @@ import sys
 import time
 
 def send_command_ssh(host, user, pswd, command):
-    #host - the ip address of the host in str format, e.g.'1.1.1.1'
-    #command - the list of command
+    # host - the ip address of the host in str format, e.g.'1.1.1.1'
+    # command - the list of command
+    # returns command output in utf-8 format
 
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -20,6 +21,7 @@ def send_command_ssh(host, user, pswd, command):
 
     with client.invoke_shell() as ssh:
 
+        ssh.send("terminal length 0\n")
         for line in command:
             ssh.send(line + '\n')
             time.sleep(1)

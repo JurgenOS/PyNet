@@ -8,15 +8,13 @@ def pars_vendor(string):
 
 def socket_checker(host_ip):
 
-
-
-
     # host_ip = '192.168.73.200'
     # script return dictionary in format:     
     # res = {'ip addr':'{}','protocol':'','output':''}
 
     res = {'ip addr':'{}'.format(host_ip),
-           'protocol':None,
+           'SSH':None,
+           'Telnet':None,
            'vendor':None
           }  
 
@@ -33,9 +31,9 @@ def socket_checker(host_ip):
         try:
             clientSocket.connect((host_ip, port))
 
-        except socket.timeout as reject:
+        except socket.timeout as timeout:
             continue
-        except ConnectionRefusedError as error:
+        except ConnectionRefusedError as reject:
             continue
     
         output = clientSocket.recv(1024)
@@ -45,13 +43,21 @@ def socket_checker(host_ip):
 
             if port == 22:
                 res['vendor'] = pars_vendor(output).decode('utf-8')
+                res['SSH'] = 'SSH'
+            else:
+                res['Telnet'] = 'Telnet'
 
         clientSocket.close()
     
     return res
 
 if __name__ == '__main__':
-
+    
+    print(socket_checker('192.168.73.200'))
+    print()
+    print(socket_checker('192.168.73.201'))
+    
+    '''
     #huawei ssh 10.212.112.73
     print(socket_checker('10.212.112.73'))
     print()
@@ -67,7 +73,7 @@ if __name__ == '__main__':
     #poligon telnet 10.171.101.250
     print(socket_checker('10.171.101.250'))
     print()
-    '''
+
     line = b'SSH-1.99-Cisco-1.25\n'
     print(pars_vendor(line))
     '''

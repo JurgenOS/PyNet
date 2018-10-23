@@ -2,20 +2,20 @@ import telnetlib
 import time
 
 
-def send_command_telnet(host, command, user, password):
+def send_command_telnet(host, user, password, command):
     # host - the ip address of the host in str format "1.1.1.1"
     # commad - the list of command
     # the function returns 'tn.read_all()' output
-
+    # returns command output in utf-8 format
 
     tn = telnetlib.Telnet(host)
     tn.expect([b"Username: ", b"login: ", b"login as: "])
     tn.write(user.encode("utf-8") + b"\n")
-        
+    tn.write(password.encode("utf-8") + b"\n")
 
-    if password:
-        tn.expect([b"Password: ", b"password: "])
-        tn.write(password.encode("utf-8") + b"\n")
+    #if password:
+    #    tn.expect([b"Password: ", b"password: "])
+    #    tn.write(password.encode("utf-8") + b"\n")
 
     time.sleep(1)
     tn.expect([b"#", b">"])
