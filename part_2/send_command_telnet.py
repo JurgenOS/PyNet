@@ -9,7 +9,7 @@ def send_command_telnet(host, command, user, password):
 
 
     tn = telnetlib.Telnet(host)
-    tn.expect([b"Username: ", b"login: "])
+    tn.expect([b"Username: ", b"login: ", b"login as: "])
     tn.write(user.encode("utf-8") + b"\n")
         
 
