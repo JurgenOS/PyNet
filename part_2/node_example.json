@@ -1,0 +1,32 @@
+{'Inventory_hostname': {'hostname':"",
+                        'vendor':"",
+					    'model':"",
+                        'OS_version':"",
+                        'transport_input':"",
+                        'uptime':"",
+					    'GOSB':"",
+                        'VSP':"",
+					    'Segment':"",
+					    'routing protocols': {'ospf 1': {'neighbors':["1.1.1.1",
+						                                              "2.2.2.2",
+																	  "3.3.3.3"
+						                                             ],
+														  'networks':["10.10.10.0/24",
+														              "20.20.20.128/25"
+																	  ]
+													    },
+                                               'bgp 650005':{'neighbors':{'neighbor_id':['status',
+											                                             'holdtime',
+											                                             'interface'
+																						]
+											                             }
+														     'networks':["10.10.10.0/24",
+															             "10.10.10.0/24"
+																		]
+											                }														
+						                     },
+					  
+                       }
+}
+
+
