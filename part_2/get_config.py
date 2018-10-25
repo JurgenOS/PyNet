@@ -27,4 +27,4 @@ with open('new_configs.txt', 'w') as file:
         else:
             conf = send_command_telnet.send_command_telnet(host, username, password, command)
 
-        file.write(conf)
+        file.write(conf.splitlines())
