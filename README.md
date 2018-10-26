@@ -79,6 +79,14 @@ pip install jinja2
 pip install textfsm
 pip install ansible
 pip install ntc-ansible
+==========================================
+python -m pip install -U pip
+python -m pip install -U matplotlib
+python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+pip install openpyxl
+pip install xlrd
+pip install xlwt
+pip install XlsxWrite
 ```
 to check installed packets:
 ```
