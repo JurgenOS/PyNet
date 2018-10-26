@@ -57,6 +57,7 @@ example:
 - [ ] install paramiko into pyneng for python2
 - [ ] install napalm, napalm-ce
 - [ ] install this:
+```
 apt-get update
 apt-get install python -y
 apt-get install build-essential libssl-dev libffi-dev -y
@@ -78,7 +79,8 @@ pip install jinja2
 pip install textfsm
 pip install ansible
 pip install ntc-ansible
-
+```
 to check installed packets:
-- lssitepackages
-
+```
+lssitepackages
+```
