@@ -55,3 +55,30 @@ example:
 ```
 ### Whishlist
 - [ ] install paramiko into pyneng for python2
+- [ ] install napalm, napalm-ce
+- [ ] install this:
+apt-get update
+apt-get install python -y
+apt-get install build-essential libssl-dev libffi-dev -y
+apt-get install python-pip -y
+pip install cryptography
+pip install netmiko
+pip install pyntc
+
+pip install ipython
+pip install tabulate
+pip install simplejson
+pip install ipython
+apt-get install graphviz
+pip install graphviz
+pip install pyyaml
+pip install pexpect
+pip install paramiko
+pip install jinja2
+pip install textfsm
+pip install ansible
+pip install ntc-ansible
+
+to check installed packets:
+- lssitepackages
+
