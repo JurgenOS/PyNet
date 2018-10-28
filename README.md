@@ -87,7 +87,7 @@ python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy
 pip install openpyxl
 pip install xlrd
 pip install xlwt
-pip install XlsxWrite
+pip install multiping
 ```
 to check installed packets:
 ```
