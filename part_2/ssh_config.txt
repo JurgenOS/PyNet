@@ -1,0 +1,15 @@
+conf t
+!
+username jos privilege 15 secret cisco
+!
+ip domain-name python.com
+crypto key generate rsa
+1024
+!
+line vty 0 4
+ transport input all
+ login local
+ exit
+!
+end
+exit

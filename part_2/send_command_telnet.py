@@ -4,7 +4,7 @@ import time
 
 def send_command_telnet(host, user, password, command):
     # host - the ip address of the host in str format "1.1.1.1"
-    # commad - the list of command
+    # command - the only ONE command
     # the function returns 'tn.read_all()' output
     # returns command output in utf-8 format
 
