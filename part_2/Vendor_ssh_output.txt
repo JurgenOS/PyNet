@@ -4,3 +4,4 @@
     b'SSH-1.99-Cisco-1.25\n'
     b'SSH-2.0-ROSSSH\r\n'# Mikrot
     b'SSH-2.0-ZTE_SSH.2.0\n' #Poligon
+    b'SSH-2.0--\r\n' # ?HUAWEI?
