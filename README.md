@@ -65,6 +65,7 @@ apt-get install python-pip -y
 pip install cryptography
 pip install netmiko
 pip install pyntc
+pip install napalm
 
 pip install ipython
 pip install tabulate
