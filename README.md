@@ -66,6 +66,7 @@ pip install cryptography
 pip install netmiko
 pip install pyntc
 pip install napalm
+pip install napalm-ce
 
 pip install ipython
 pip install tabulate
