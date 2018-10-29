@@ -32,17 +32,7 @@ hosts = [{'host' : '192.168.73.200',
          },        
         ]
 
-'''
-hosts = [{'host' : '192.168.73.200',
-          'vendor':'cisco',
-          'port':'telnet'
-         }   
-        ]
-'''
 for host in hosts:
-
-#    print(host)
-#    print(host['port'])
 
     if not ping.py_ping(host['host']):
         print(host['host'], ' is unreachable!!')
@@ -59,42 +49,12 @@ admin_port: {}
         optional_args = {'transport': '{}'.format(host['port']),}
         node = driver('{}'.format(host['host']),'user','cisco', optional_args = optional_args)
         node.open()
-        print (json.dumps(node.get_arp_table(), indent = 4), '\n')
+        print (json.dumps(node.get_bgp_neighbors(), indent = 4), '\n')
         node.close()
     if host['vendor'] == 'huawei':
         driver = napalm.get_network_driver('ce')
         optional_args = {'transport': '{}'.format(host['port']),}
         node = driver('{}'.format(host['host']),'user','cisco', optional_args = optional_args)
         node.open()
-        print (json.dumps(node.get_arp_table(), indent = 4), '\n')
+        print (json.dumps(node.cli('disp bgp peer'), indent = 4), '\n')
         node.close()
-
-    '''
-   
-    try:    
-        if host['vendor'] == 'cisco':
-            driver = napalm.get_network_driver('ios')
-            optional_args = {'transport': '{}'.format(host['port']),}
-            node = driver('{}'.format(host['host']),'user','cisco', optional_args = optional_args)
-            node.open()
-            print (json.dumps(node.get_arp_table(), indent = 4), '\n')
-            node.close()
-
-        if host['vendor'] == 'huawei':
-            driver = napalm.get_network_driver('ce')
-            optional_args = {'transport': '{}'.format(host['port']),}
-            node = driver('{}'.format(host['host']),'user','cisco', optional_args = optional_args)
-            node.open()
-            print (json.dumps(node.get_arp_table(), indent = 4), '\n')
-            node.close()
-
-    except saved_exception as error:
-        print(error)
-        continue            
-            
-            
-            
-    except NetMikoAuthenticationException(msg) as error:
-        print(error)
-        continue
-    '''
