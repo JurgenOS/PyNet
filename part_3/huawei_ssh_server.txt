@@ -1,0 +1,16 @@
+rsa local-key-pair create
+#
+aaa
+ local-user client001 password cipher xxxxxxxx
+ local-user client001 service-type ssh
+#
+stelnet server enable
+ssh user client001
+ssh user client001 authentication-type password
+ssh user client001 service-type all
+ssh client first-time enable
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+ protocol inbound ssh
