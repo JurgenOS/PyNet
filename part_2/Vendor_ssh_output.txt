@@ -5,3 +5,10 @@
     b'SSH-2.0-ROSSSH\r\n'# Mikrot
     b'SSH-2.0-ZTE_SSH.2.0\n' #Poligon
     b'SSH-2.0--\r\n' # ?HUAWEI?
+    b'SSH-1.99--\r\n' # ?HUAWEI?
+    b'SSH-1.99-OpenSSH_3.9p1\r\n' # ?ZyXEL?
+    b'SSH-1.99-Comware-5.20\r\n' # HP
+    b'SSH-1.99-OpenSSH_7.1\r\n' # ?RiverBed?
+    b'SSH-2.0-OpenSSH_5.5 FIPS\n' # Cisco Nexus
+    b'SSH-2.0-OpenSSH_4.5\n' # Server Blue Coat
+    b'SSH-2.0-OpenSSH_6.1_hpn13v11\n' # Citrix Citrix NetScaler MPX 10500
