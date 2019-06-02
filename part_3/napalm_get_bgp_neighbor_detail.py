@@ -42,19 +42,19 @@ for host in hosts:
     print('''host      : {}
 vendor    : {}
 admin_port: {}
-'''.format(host['host'], host['vendor'], host['port']))
+'''.format(host['host'].strip(), host['vendor'], host['port']))
 
     if host['vendor'] == 'cisco':
         driver = napalm.get_network_driver('ios')
         optional_args = {'transport': '{}'.format(host['port']),}
-        node = driver('{}'.format(host['host']),'user','cisco', optional_args = optional_args)
+        node = driver('{}'.format(host['host'].strip()),'user','cisco', optional_args = optional_args)
         node.open()
-        print (json.dumps(node.get_arp_table(), indent = 4), '\n')
+        print (json.dumps(node.get_bgp_neighbors_detail(), indent = 4), '\n')
         node.close()
     if host['vendor'] == 'huawei':
         driver = napalm.get_network_driver('ce')
         optional_args = {'transport': '{}'.format(host['port']),}
-        node = driver('{}'.format(host['host']),'user','cisco', optional_args = optional_args)
+        node = driver('{}'.format(host['host'].strip()),'user','cisco', optional_args = optional_args)
         node.open()
-        print (json.dumps(node.get_arp_table(), indent = 4), '\n')
+        print (json.dumps(node.cli('disp bgp peer'), indent = 4), '\n')
         node.close()

@@ -30,11 +30,16 @@ def send_command_ssh(host, user, pswd, command):
     
     return result
 
+
 if __name__ == '__main__':
 
-    host_ip = "10.212.112.73"
-    user = input("Enter the username: ")
-    password = getpass.getpass()
-    command = ["disp ip int brie"]
+    host_ip = "192.168.88.97"
+    user = 'huawei'
+    password = 'huawei'
+    command = ['sys',
+               'sysn HUAWEI-1324567890_huawei_test_long_hostname',
+               'acl 2001',
+               'rule 10 permit source 10.1.0.0 0.255.255.255'
+               ]
     
     print(send_command_ssh(host_ip, user, password, command))

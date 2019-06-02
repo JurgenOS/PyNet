@@ -42,19 +42,69 @@ for host in hosts:
     print('''host      : {}
 vendor    : {}
 admin_port: {}
-'''.format(host['host'], host['vendor'], host['port']))
+'''.format(host['host'].strip(), host['vendor'], host['port']))
 
     if host['vendor'] == 'cisco':
         driver = napalm.get_network_driver('ios')
         optional_args = {'transport': '{}'.format(host['port']),}
-        node = driver('{}'.format(host['host']),'user','cisco', optional_args = optional_args)
+        node = driver('{}'.format(host['host'].strip()),'user','cisco', optional_args = optional_args)
         node.open()
         print (json.dumps(node.get_bgp_neighbors(), indent = 4), '\n')
         node.close()
     if host['vendor'] == 'huawei':
         driver = napalm.get_network_driver('ce')
         optional_args = {'transport': '{}'.format(host['port']),}
-        node = driver('{}'.format(host['host']),'user','cisco', optional_args = optional_args)
+        node = driver('{}'.format(host['host'].strip()),'user','cisco', optional_args = optional_args)
         node.open()
         print (json.dumps(node.cli('disp bgp peer'), indent = 4), '\n')
         node.close()
+
+
+'''
+============================================================
+host      : 192.168.73.201
+vendor    : cisco
+admin_port: ssh
+
+{
+    "global": {
+        "router_id": "192.168.73.201",
+        "peers": {
+            "192.168.73.200": {
+                "local_as": 65000,
+                "remote_as": 65000,
+                "remote_id": "192.168.73.200",
+                "is_up": true,
+                "is_enabled": true,
+                "description": "",
+                "uptime": 46,
+                "address_family": {
+                    "ipv4": {
+                        "received_prefixes": 0,
+                        "accepted_prefixes": 0,
+                        "sent_prefixes": 0
+                    }
+                }
+            },
+            "192.168.73.250": {
+                "local_as": 65000,
+                "remote_as": 65000,
+                "remote_id": "192.168.73.250",
+                "is_up": true,
+                "is_enabled": true,
+                "description": "",
+                "uptime": 113,
+                "address_family": {
+                    "ipv4": {
+                        "received_prefixes": 0,
+                        "accepted_prefixes": 0,
+                        "sent_prefixes": 0
+                    }
+                }
+            }
+        }
+    }
+}
+
+============================================================
+'''

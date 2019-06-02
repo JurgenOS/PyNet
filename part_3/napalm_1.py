@@ -8,13 +8,13 @@ ios_ssh = driver('192.168.73.201','user','cisco')
 
 ios_ssh.open()
 
-for key, value in ios_ssh.get_facts().items():
-    print("{}: {}".format(key, value))
-'''
-#output = ios_ssh.get_interfaces()
-#print (json.dumps(output, indent = 4))
+#for key, value in ios_ssh.get_facts().items():
+#    print("{}: {}".format(key, value))
 
-'''
+output = ios_ssh.get_route_to(destination = '192.168.73.200')
+print (json.dumps(output, indent = 4))
+
+
 
 '''
 >>> from napalm import get_network_driver
